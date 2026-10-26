@@ -1,25 +1,19 @@
-# CHERRY LINE — repository package
+# CHERRY LINE — correctif complet (dossier `Media/` avec M majuscule)
 
-## Files
-- `index.html`: portfolio structure and podcast/contact slots
-- `styles.css`: visual design and responsive styles
-- `app.js`: rendering, editable text/media, and carousel logic
-- `Media/`: add the original photo/video files here
+Ce ZIP remplace uniquement les trois fichiers du site : `app.js`, `index.html` et `styles.css`. Il ne contient pas le dossier de médias : garde ton dossier GitHub `Media/` et tous ses fichiers tels quels.
 
-## Publish on GitHub Pages
-Upload the contents of this folder to the root of a new repository. Keep `index.html`, `styles.css`, and `app.js` together at the root. Keep media files inside the case-sensitive `Media/` folder.
+Corrections incluses :
+- toutes les références de médias utilisent `Media/` avec M majuscule, conformément au dépôt ;
+- suppression forcée de la grille décorative ;
+- Women2Women utilise l’intégration YouTube `Qc660Zu_hZI` en paysage 16:9 ;
+- Sport Content 3 utilise l’intégration TikTok pour la vidéo `7646470778187222304`, en portrait 9:16, avec un lien direct de secours ;
+- les vidéos locales continuent d’utiliser leurs chemins et noms de fichiers existants.
 
-## Links
-- Email: `leaspa.pro@gmail.com`
-- Instagram: `https://www.instagram.com/2brunette2answer/`
-- LinkedIn: `https://be.linkedin.com/in/lea-spagnuolo-70017131b`
-- Podcast 1 (Spotify embed): `https://open.spotify.com/show/1gCC6MD8U4gTCDobc5bStf?si=28c198ff8c044e3a`
-- Podcast 2 (Spotify embed): `https://open.spotify.com/show/0CaUaevlumswWColfDaiZ3?si=d1529f91a21840bd`
+## Installation
+1. Décompresse le ZIP.
+2. Dans ton dépôt GitHub existant, remplace `app.js`, `index.html` et `styles.css` par ceux du dossier.
+3. Ne remplace pas et ne renomme pas le dossier `Media/`.
+4. Commit/push les changements et attends la publication GitHub Pages. Recharge ensuite le site en forçant l’actualisation.
 
-The two podcast shows are embedded in the page using Spotify iframes by default; they do not rely on browser-local settings. YouTube channel: `https://www.youtube.com/@Leyaenvadrouille` (used as the default contact link; a URL saved in the local editor takes precedence).
-
-## Media
-The original large photo/video files are not included. Add them to `Media/` with the exact case-sensitive names listed in `Media/README.txt`, or edit `STATIC_MEDIA` in `app.js` to match your filenames. Files only on your Mac or in browser localStorage are not available to visitors.
-
-## Validation
-`app.js` has been checked with Node's syntax checker. This confirms syntax only, not the final browser appearance. After uploading, check GitHub Pages and verify each media path.
+## Vérifications et limite
+La syntaxe JavaScript est vérifiée et les chemins de médias du code utilisent `Media/`. Le ZIP ne contient pas les fichiers médias. La lecture d’un embed TikTok dépend aussi du service TikTok et de ses autorisations ; si TikTok refuse l’intégration, le lien de secours ouvre la vidéo d’origine. Je n’ai pas prétendu avoir testé le site dans un navigateur réel.

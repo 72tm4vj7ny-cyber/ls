@@ -3685,109 +3685,16 @@ main, section, article, .section-head, .work-grid, .work-item, .experience-card,
 }
 
 
-/* FINAL LAUNCH OVERRIDES — targeted fixes, preserving the existing visual identity. */
-/* Sport and School carousels: a stable responsive viewport with 9:16 media cards. */
-#work .content-carousel-stage{height:clamp(340px,46vw,460px)!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;scroll-padding-inline:calc(50% - 130px)!important;}
-#work .content-carousel-track{height:100%!important;align-items:center!important;}
-#work .content-carousel-slide{height:calc(100% - 8px)!important;max-height:452px!important;aspect-ratio:9 / 16!important;flex:0 0 auto!important;overflow:hidden!important;scroll-snap-align:center!important;}
-#work .content-carousel-slide img,#work .content-carousel-slide video{width:100%!important;height:100%!important;object-fit:contain!important;}
-#work .content-carousel-youtube .youtube-embed-frame{width:100%!important;height:100%!important;inset:0!important;position:absolute!important;}
-@media(max-width:600px){#work .content-carousel-stage{height:clamp(300px,105vw,360px)!important;}#work .content-carousel-slide{height:calc(100% - 8px)!important;}}
-/* About: keep the image vertical, balanced and capped on desktop and mobile. */
-#about.about-layout{align-items:center!important;}
-#about.about-layout > .about-media-primary{flex:0 0 min(100%,280px)!important;width:min(100%,280px)!important;max-width:280px!important;align-self:center!important;min-width:0!important;}
-#about.about-layout > .about-media-primary > .about-carousel-host{width:100%!important;max-width:280px!important;height:auto!important;min-height:0!important;aspect-ratio:9 / 16!important;flex:none!important;overflow:hidden!important;}
-#about.about-layout .about-carousel-viewport,#about.about-layout .about-carousel-track,#about.about-layout .about-carousel-slide{width:100%!important;height:100%!important;min-height:0!important;aspect-ratio:9 / 16!important;}
-#about.about-layout .about-carousel-slide img,#about.about-layout .about-carousel-slide video{display:block!important;width:100%!important;height:100%!important;min-height:0!important;object-fit:cover!important;}
-@media(max-width:850px){#about.about-layout{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:28px!important;}#about.about-layout > .about-media-primary{width:min(100%,280px)!important;max-width:280px!important;justify-self:center!important;}}
-/* Hero: unmistakable breathing room between surname and portrait, all breakpoints. */
-.hero-main-row{column-gap:clamp(34px,5.5vw,76px)!important;}
-.hero-main-row .hero-visual{padding:0!important;margin:0!important;}
-@media(max-width:850px){.hero-main-row{column-gap:24px!important;}}
-@media(max-width:520px){.hero-main-row{grid-template-columns:minmax(0,1fr) 100px!important;column-gap:22px!important;}.hero-main-row .hero-visual,.hero-main-row .hero-visual .image-placeholder{width:100px!important;max-width:100px!important;min-width:100px!important;}.hero-text-block h1{letter-spacing:-.045em!important;}}
+/* HOTFIX Oct 26: remove the unintended grid overlay from the hero/background. */
+.ambient-grid { display: none !important; background-image: none !important; }
+
+/* HOTFIX Oct 26: embeds use the intended native aspect ratio. */
+#international .w2w-media .image-placeholder { aspect-ratio: 16 / 9 !important; width: 100% !important; max-width: 100% !important; height: auto !important; min-height: 0 !important; }
+#international .w2w-media .youtube-media-item, #international .w2w-media iframe.youtube-embed-frame { width: 100% !important; height: 100% !important; aspect-ratio: 16 / 9 !important; }
+.content-carousel-tiktok { position: relative; }
+.content-carousel-tiktok iframe { display:block; width:100%; height:100%; border:0; }
+.tiktok-fallback-link { position:absolute; left:0; right:0; bottom:0; z-index:3; display:block; padding:7px 9px; background:rgba(0,0,0,.78); color:#fff; text-align:center; font:500 10px var(--mono); text-decoration:none; letter-spacing:.05em; }
 
 
-/* FINAL CONTENT POLISH — October 2026 */
-/* Event experience detail rows: align their labels and descriptions consistently. */
-.work-item[data-type="event"] > .work-caption,
-.work-item[data-type="event"] > .work-caption > span,
-.work-item[data-type="event"] > .work-caption > p,
-.work-item[data-type="event"] > .conception-meta {
-  min-width: 0 !important;
-  box-sizing: border-box !important;
-}
-.work-item[data-type="event"] > .work-caption {
-  align-items: start !important;
-  row-gap: 10px !important;
-}
-.work-item[data-type="event"] > .work-caption > span { margin: 0 !important; }
-.work-item[data-type="event"] > .work-caption > p,
-.work-item[data-type="event"] > .work-caption > .conception-meta {
-  max-width: none !important;
-  width: 100% !important;
-  margin: 0 !important;
-  overflow-wrap: anywhere;
-}
-/* Average Rob: iframe and wrapper must share one exact 9:16 box, with no overflow. */
-#work .work-item.average-rob-interview > .image-placeholder {
-  position: relative !important;
-  display: block !important;
-  width: min(100%, 260px) !important;
-  max-width: 260px !important;
-  height: auto !important;
-  min-height: 0 !important;
-  aspect-ratio: 9 / 16 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  box-sizing: border-box !important;
-}
-#work .work-item.average-rob-interview > .image-placeholder .youtube-media-item,
-#work .work-item.average-rob-interview > .image-placeholder .youtube-embed-frame {
-  position: absolute !important;
-  inset: 0 !important;
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 0 !important;
-  max-height: 100% !important;
-  aspect-ratio: auto !important;
-  border: 0 !important;
-  box-sizing: border-box !important;
-}
-/* Content descriptions run the full available width; avoid mid-line clipping. */
-#work .work-item.content-card[data-content-category="sport"] > .work-caption,
-#work .work-item.content-card[data-content-category="school"] > .work-caption {
-  width: 100% !important;
-  max-width: none !important;
-  overflow: visible !important;
-  box-sizing: border-box !important;
-}
-#work .work-item.content-card[data-content-category="sport"] > .work-caption p,
-#work .work-item.content-card[data-content-category="school"] > .work-caption p {
-  display: block !important;
-  width: 100% !important;
-  max-width: none !important;
-  white-space: normal !important;
-  overflow: visible !important;
-  overflow-wrap: normal !important;
-  word-break: normal !important;
-  text-overflow: clip !important;
-  line-height: 1.7 !important;
-}
-/* TikTok and YouTube players stay inside the same portrait carousel frame. */
-#work .content-carousel-tiktok,
-#work .content-carousel-youtube { position: relative !important; overflow: hidden !important; }
-#work .content-carousel-tiktok .youtube-embed-frame,
-#work .content-carousel-youtube .youtube-embed-frame {
-  position: absolute !important; inset: 0 !important;
-  width: 100% !important; height: 100% !important; border: 0 !important;
-}
-
-
-/* Final targeted polish: center La Conception copy and keep its hosted media cleanly framed. */
-#work .work-item.large > .conception-side-copy { text-align: center !important; align-items: center !important; }
-#work .work-item.large > .conception-side-copy p { max-width: 42ch !important; text-align: center !important; }
-#work .work-item.large > .conception-side-copy::before { text-align: center !important; }
-#work [data-media="w2w"] .youtube-media-item,
-#work [data-media="w2w"] .youtube-embed-frame { width: 100% !important; height: 100% !important; display: block !important; border: 0 !important; }
-#work [data-media="w2w"] .youtube-media-item { overflow: hidden !important; }
+/* FINAL HOTFIX: no decorative grid overlay on the hero or page background. */
+.ambient-grid, body > .ambient-grid, main > .ambient-grid { display: none !important; visibility: hidden !important; opacity: 0 !important; background-image: none !important; }
